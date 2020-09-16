@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>My first page</title>
+		<meta charset="utf-8">
+
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Open+Sans:wght@300;400;600&family=Roboto&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+		<style>
+				body{
+					margin: 0;
+				}
+
+		/******* START OF BOTTOM NAVBAR STYLING *******/
+				.navbar {
+					width: 100%;
+					background-color: white;
+					overflow: hidden;
+					position:fixed;
+					bottom:0;
+					border-top: 1px solid #B6BBBE;
+					z-index: 1000;
+				}
+
+				#surround {
+					display: inline-block;
+					width: 13%;
+					text-align: center;
+					padding:20px 0 20px;
+				}
+
+				.navbar a {
+					padding: 10px 30px 20px;
+					text-decoration: none;
+					font-size: 30px;
+					font-family: "Open Sans";
+					font-weight: 600;
+					color: #B6BBBE;
+					cursor: pointer;
+				}
+
+				.active{
+					color: #6FCED8;
+				}
+
+				p {
+					margin: 0;
+				}
+		/******* END OF BOTTOM NAVBAR STYLING *******/
+
+		/******* START OF PROFILE STYLING *******/
+				.profile-box{
+					position: absolute;
+					background-color: #6FCED8;
+					width: 93%;
+					margin: 100px 35px 20px;
+					height: 480px;
+					border-radius: 35px;
+				}
+
+				.settings{
+					float:right;
+					margin-right: 75px;
+					margin-top: 60px;
+				}
+
+				.dp{
+					clear:both;
+					margin-top:80px;
+					margin-left: 75px;
+					display: inline-block;
+				}
+
+				h2{
+					display: inline-block;
+					font-family: "Montserrat";
+					font-size: 38px;
+					font-weight: 500;
+					color: white;
+					position: absolute;
+					top: 110px;
+					left: 275px;
+				}
+
+				#profile-nav{
+					display: inline-block;
+					width: 25%;
+					text-align: center;
+					padding:20px 0 20px;
+				}
+
+				.profile-icons{
+					margin-top:10px;
+					height:50px;
+				}
+
+				.profile-icons a{
+					padding: 0px 30px 20px;
+					text-decoration: none;
+					font-size: 30px;
+					font-family: "Montserrat";
+					font-weight: 400;
+					color: white;
+					cursor: pointer;
+				}
+
+				hr{
+					margin:0;
+					display: inline-block;
+					border-left:0;
+					border-top:0;
+					border-bottom: 0;
+					border-right: 2px solid white;
+				}
+
+				.achievements{
+					position: relative;
+					top:15px;
+				}
+
+		/******* END OF PROFILE STYLING *******/
+
+		/******* START OF REWARDS STYLING *******/
+		.logo{
+			border-radius: 100px;
+			display: inline-block;
+			margin-top: 80px;
+			margin-bottom: 40px;
+			vertical-align: middle;
+		}
+
+		h3{
+				font-size: 30.5px;
+				font-family: "Montserrat", sans-serif;
+				font-weight:400;
+				margin:75px 25px 30px;
+				color: rgb(92 92 92);
+				letter-spacing: 3px;
+				display: inline-block;
+				vertical-align: middle;
+		}
+
+		.rewards{
+			position: absolute;
+			top: 600px;
+			margin: 0px 60px 200px;
+			display: block;
+			overflow: scroll;
+			float: left;
+			width:90%;
+			z-index: 0;
+		}
+
+		h4{
+				position: relative;
+				font-size: 32px;
+				font-family: "Montserrat", sans-serif;
+				font-weight:400;
+				margin:35px 50px 30px;
+				color: rgb(92 92 92);
+				letter-spacing: 3px;
+				display: block;
+				vertical-align: middle;
+				line-height: 45px;
+		}
+
+		.redeem-container{
+			position: relative;
+			width: 760px;
+			height: 621.32px;
+			left: 50px;
+			box-shadow: 1px 4px 20px #DFE0E0;
+			border-radius: 40px;
+			margin-bottom: 80px;
+		}
+
+		.progress{
+			background-color: #E9F4F5;
+			margin-top:-4px;
+		}
+
+		.progress-bar{
+			background-color: #6FCED8;
+		}
+
+		h5{
+			position: absolute;
+			display: inline-block;
+			font-family: "Montserrat";
+			font-size: 30px;
+			font-weight: 400;
+			margin: 30px 55px 0;
+			color: #707070;
+			letter-spacing: 2px;
+		}
+
+		button{
+			position: relative;
+			display: inline-block;
+			background-color: white;
+			color: #B5B6B7;
+			border: 2px solid #DFE0E0;
+			padding: 20px 50px 20px;
+			font-family: "Montserrat";
+			font-size: 21px;
+			font-weight: 400;
+			letter-spacing: 2px;
+			float: right;
+			margin-right: 55px;
+			margin-top: 8px;
+		}
+
+		.focus{
+			position: relative;
+			background-color: #6FCED8 ;
+			color: white ;
+			border: 0;
+		}
+		/******* END OF REWARDS STYLING *******/
+
+
+
+
+		</style>
+	</head>
+
+
+
+	<body>
+<!--- START OF BOTOTM NAVBAR ---->
+      <div class="navbar">
+						<!-- This did not work! text appeared beside the icons, not under.
+								<a href="track.html">
+										<img
+												src="track.svg"
+												alt="graph image"
+												width="70px"
+												color="grey"
+												>
+										Track
+								</a>
+						-->
+				<a href="diary.html">
+						<span id="surround">
+								<img class="diary-icon"
+										src="diary.svg"
+										alt="diary image"
+										width="80px">
+								<p>Diary</p>
+						</span>
+					</a>
+
+
+					<a href="meals.html">
+						<span id="surround">
+								<img class="meal-icon"
+										src="meal.svg"
+										alt="plate image"
+										width="80px">
+								<p>Meals</p>
+						</span>
+					</a>
+
+
+					<a href="workouts(MyProgram).html">
+							<span id="surround">
+									<img class="workout-icon"
+											src="workout.svg"
+											alt="weights image"
+											width="80px">
+									<p>Workouts</p>
+							</span>
+					</a>
+
+
+					<a href="track.html">
+						<span id="surround">
+									<img class="track-icon"
+											src="track.svg"
+											alt="graph image"
+											width="70px">
+											<p>Track</p>
+							</span>
+					</a>
+
+
+						<a href="rewards.html">
+							<span id="surround" class="active">
+										<img class="rewards-icon"
+												src="active-reward.svg"
+												alt="gift image"
+												width="80px">
+										<p>Rewards</p>
+							</span>
+						</a>
+      </div>
+<!--- END OF BOTTOM NAVBAR ---->
+
+
+<!--- START OF PROFILE ----->
+			<div class="profile-box">
+					<img src="settings.svg" class="settings" width="60px"/>
+					<img src="dp.svg" class="dp" width="150px"/>
+					<h2 class="username">Username</h2>
+
+					<div class="profile-icons">
+						<a href="https://www.google.com">
+								<span id="profile-nav">
+										<img class="feedback"
+												src="feedback.svg"
+												alt="chat image"
+												width="80px">
+										<p>Feedback</p>
+								</span>
+							</a>
+
+						<hr width="1" size="100" class="line1">
+
+						<a href="#" id="achievementslink">
+								<span id="profile-nav">
+										<img class="achievements"
+												src="achievements.svg"
+												alt="medal image"
+												width="120px"
+												height="120px;">
+										<p>Achievements</p>
+								</span>
+						</a>
+
+						<hr width="1" size="100" class="line2">
+
+						<a href="#">
+								<span id="profile-nav">
+										<img class="voucher"
+												src="voucher.svg"
+												alt="voucher image"
+												width="100px">
+										<p>Redeemed</p>
+								</span>
+						</a>
+
+					</div>
+
+			</div>
+<!--- END OF PROFILE ----->
+
+
+<!--- START OF REWARDS ---------->
+			<div class="rewards">
+
+					<img src="icon.png" class="logo" width="90px"/>
+					<span>
+							<h3>Your Cardio</h3>
+					</span>
+
+					<div class="redeem-container">
+								<img src="rewards/running-rewards.png" width="100%">
+								<div class="progress" style="height:20px">
+    								<div class="progress-bar" style="width:100%;height:20px"></div>
+  							</div>
+								<h4>GET 10% OFF ADIDAS </br> RUNNING</h3>
+								<h5>Adidas</h4>
+								<button class="redeem-button focus">REDEEM</button>
+					</div>
+
+
+					<img src="icon.png" class="logo" width="90px"/>
+					<span>
+							<h3>Your Strength Training</h3>
+					</span>
+
+					<div class="redeem-container">
+								<img src="rewards/strength-rewards.png" width="100%">
+								<div class="progress" style="height:20px">
+    								<div class="progress-bar" style="width:75%;height:20px"></div>
+  							</div>
+								<h4>GET 15% OFF NIKE </br> TRAINING</h3>
+								<h5>Nike</h4>
+								<button class="redeem-button">REDEEM</button>
+					</div>
+
+
+					<img src="icon.png" class="logo" width="90px"/>
+					<span>
+							<h3>Your Circuit Training</h3>
+					</span>
+
+					<div class="redeem-container">
+							<img src="rewards/circuits-rewards.png" width="100%">
+							<div class="progress" style="height:20px">
+									<div class="progress-bar" style="width:25%;height:20px"></div>
+							</div>
+							<h4>GET 5% OFF PUMA </br> TRAINING</h3>
+							<h5>Puma</h4>
+							<button class="redeem-button">REDEEM</button>
+					</div>
+			</div>
+
+
+
+
+
+<!--- END OF REWARDS ---------->
+
+  </body>
+
+
+</html>

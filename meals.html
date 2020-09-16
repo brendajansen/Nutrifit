@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Meal Tracker</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="my_portfolio_style.css" />
+
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Open+Sans:wght@300;400;600&family=Roboto&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+		<script src="jquery-1.7.1.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<style>
+
+				body{
+					margin: 0;
+				}
+/******* START OF BOTTOM NAVBAR STYLING *******/
+				.navbar {
+					width: 100%;
+					background-color: white;
+					overflow: hidden;
+					position:fixed;
+					bottom:0;
+					border-top: 1px solid #B6BBBE;
+					background: white;
+					z-index: 5;
+				}
+
+				#surround {
+					display: inline-block;
+					width: 13%;
+					text-align: center;
+					padding:20px 0 20px;
+				}
+
+				.navbar a {
+					padding: 10px 30px 20px;
+					text-decoration: none;
+					font-size: 30px;
+					font-family: "Open Sans";
+					font-weight: 600;
+					color: #B6BBBE;
+					cursor: pointer;
+				}
+
+				.active{
+					color: #6FCED8;
+				}
+
+				p {
+					margin: 0;
+				}
+/******* END OF BOTTOM NAVBAR STYLING *******/
+
+
+/****** START OF HEADING STYLING ******/
+				.heading-container{
+					background-color: #6FCED8;
+					color: white;
+					width: 100%;
+					top: 0;
+					overflow: hidden;
+					border-bottom: 2px solid #B6BBBE;
+					padding: 90px 0 40px;
+					margin: 0;
+					display: block;
+					position: fixed;
+					z-index: 5;
+				}
+
+				h1{
+					font-family: "Montserrat", sans-serif;
+					font-size: 40px;
+					font-weight: 500;
+					text-align: center;
+					margin: 0;
+				}
+
+/******* END OF HEADING STYLING *******/
+
+
+/******* START OF SEARCH BAR STYLING ********/
+				.search-bar{
+					display: block;
+					width:100%;
+					border-top: 2px solid #D1D1D1;
+					border-bottom: 2px solid #D1D1D1;
+					z-index: 5;
+					background: white;
+					position: fixed;
+					margin-top: 0px;
+					top: 180px;
+
+				}
+
+				.search-bar input[type=image] {
+					padding: 30px 20px 0px 40px;
+					width: 4%;
+					border: none;
+					margin: 0;
+					display:inline-block;
+					float: none;
+				}
+
+				.search-bar input[type=text] {
+					padding:35px 0 35px;
+					margin:0;
+					font-size:30px;
+					font-family: "Montserrat", sans-serif;
+					font-weight: 200;
+					width: 80%;
+					border: none;
+					display:inline-block;
+				}
+
+				input:focus{
+					outline: none;
+				}
+/******* END OF SEARCH BAR STYLING **********/
+
+
+/******* START OF FOOD NAV STYLING *******/
+				.foodnav{
+					width:100%;
+					display: block;
+					border-bottom: 3px solid #D1D1D1;
+					position: fixed;
+					background: white;
+					z-index: 4;
+					margin: 0;
+					top: 296px;
+				}
+
+				h2{
+					display: inline-block;
+					font-family: "Montserrat", sans-serif;
+					font-size: 35px;
+					font-weight: 600;
+					text-align: center;
+					color:grey;
+					padding: 8px 20px 8px 20px;
+					width: 20.5%;
+				}
+
+				#active{
+					align-items: center;
+					width: 10%;
+					padding-bottom: 37px;
+					border-bottom: 7px solid #6FCED8;
+					margin: 0;
+				}
+/******* END OF FOOD NAV STYLING *******/
+
+
+
+/********* START OF FOOD LIST STYLING ***********/
+
+				.food-list{
+					margin-top: 400px;
+					margin-bottom: 100px;
+					z-index: -1;
+
+				}
+
+				.container{
+					display: block;
+					position: relative;
+					padding-left: 150px;
+					margin: 50px 0 12px;
+					font-family: "Montserrat", sans-serif;
+					font-size: 35px;
+					font-weight: 600;
+					color: #666666;
+				}
+
+				/*** hide browser's default checkbox ***/
+				.container input{
+					position: absolute;
+					opacity: 0;
+					cursor: pointer;
+					height:0;
+					width:0;
+
+				}
+
+				/*** create custom checkbox ***/
+				.checkmark{
+					position: absolute;
+					background-color: none;
+					border: 2px solid #B5B6B7;
+					border-radius: 45px;
+					top: 18px;
+  				left: 50px;
+  				height: 60px;
+  				width: 60px;
+				}
+
+				/* When the checkbox is checked, add the turquoise background */
+				.container input:checked ~ .checkmark {
+				  background-color: #6FCED8;
+				}
+
+				/* Create the checkmark/indicator (the tick, hidden when not checked) */
+				.checkmark:after {
+				  content: "";
+				  position: absolute;
+				  display: none;
+					border: none; //why doesnt this work??
+				}
+
+
+				/* Show the checkmark when checked */
+				.container input:checked ~ .checkmark:after {
+				  display: block;
+				}
+
+				/* Style the tick */
+				.container .checkmark:after {
+				  left: 20px;
+				  top: 10px;
+				  width: 12px;
+				  height: 28px;
+				  border: solid white;
+				  border-width: 0 7px 7px 0;
+				  -webkit-transform: rotate(45deg);
+				  -ms-transform: rotate(45deg);
+				  transform: rotate(45deg);
+				}
+
+				h3{
+					font-family: "Montserrat", sans-serif;
+					font-size: 28px;
+					font-weight: 400;
+					margin:17px 150px 17px;
+					color: grey;
+					display: inline;
+
+				}
+
+				h4{
+					font-family: "Montserrat", sans-serif;
+					font-size: 35px;
+					font-weight: 400;
+					color: grey;
+					margin-top: 25px;
+					margin-right: 55px;
+					margin-bottom: 0;
+					display: inline;
+					float: right;
+					top: -10px;
+				}
+
+				table{
+					margin: 0;
+					width: 100%;
+				}
+				button{
+					clear:both;
+					display: block;
+					border: 2px solid rgb(225, 225, 225);
+					color: rgb(147, 147, 147);
+					font-family: "Montserrat",sans-serif;
+					font-size: 35px;
+					font-weight: 400;
+					letter-spacing: 5px;
+					background: none;
+					padding: 30px 100px 30px;
+					margin: 100px 200px 250px;
+				}
+
+				button:focus{
+					outline: none;
+				}
+			/********* END OF FOOD LIST STYLING ***********/
+		</style>
+
+	</head>
+
+
+
+	<body>
+<!--- START OF BOTTOM NAVBAR ---->
+      <div class="navbar">
+						<!-- This did not work! text appeared beside the icons, not under.
+								<a href="track.html">
+										<img
+												src="track.svg"
+												alt="graph image"
+												width="70px"
+												color="grey"
+												>
+										Track
+								</a>
+						-->
+				<a href="diary.html">
+						<span id="surround">
+								<img class="diary-icon"
+										src="diary.svg"
+										alt="diary image"
+										width="80px">
+								<p>Diary</p>
+						</span>
+					</a>
+
+
+					<a href="meals.html">
+						<span id="surround" class="active">
+								<img class="meal-icon"
+										src="active-meal.svg"
+										alt="plate image"
+										width="80px">
+								<p>Meals</p>
+						</span>
+					</a>
+
+
+					<a href="workouts(MyProgram).html">
+							<span id="surround">
+									<img class="workout-icon"
+											src="workout.svg"
+											alt="weights image"
+											width="80px">
+									<p>Workouts</p>
+							</span>
+					</a>
+
+
+					<a href="track.html">
+						<span id="surround">
+									<img class="track-icon"
+											src="track.svg"
+											alt="graph image"
+											width="70px">
+											<p>Track</p>
+							</span>
+					</a>
+
+
+						<a href="rewards.html">
+							<span id="surround">
+										<img class="rewards-icon"
+												src="reward.svg"
+												alt="gift image"
+												width="80px">
+										<p>Rewards</p>
+							</span>
+						</a>
+      </div>
+<!--- END OF BOTTOM NAVBAR ---->
+
+
+<!--- START OF HEADING ----->
+			<div class="heading-container">
+					<h1>Meal Tracker</h1>
+			</div>
+
+			<div class="search-bar">
+					<form action="/action_page.php">
+							<input type="image" src="search2.svg">
+      				<input type="text" placeholder="Search for food" name="search" id="myInput">
+    			</form>
+			</div>
+
+			<div class="foodnav">
+						<h2>Today</h2>
+				<span id="active">
+						<h2>Frequent</h2>
+				</span>
+						<h2>My Foods</h2>
+						<h2>Recipes</h2>
+			</div>
+
+<!--- END OF HEADING ----->
+
+<!--- START OF FOOD LIST ------>
+			<div class="food-list">
+
+				<table>
+					<tbody id="mytable">
+						<tr>
+							<td>
+							<label class="container"> Black Bean Taco
+										<input type="checkbox" id="food1" value="219.8">
+										<span class="checkmark"></span>
+							</label>
+										<h3>Homemade, 1 serving</h3>
+							</td>
+							<td>
+										<h4 style="float:right;">219.8cal</h4>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+							<label class="container" > Salad and Dressing
+										<input type="checkbox" id="food2" value="457">
+										<span class="checkmark"></span>
+							</label>
+										<h3>Salad dressing, 1 plate</h3>
+							</td>
+							<td>
+										<h4 style="float:right;">457cal</h4>
+							</td>
+						</tr>
+
+
+						<tr>
+							<td>
+							<label class="container"> Crunchy Peanut Butter
+										<input type="checkbox" id="food3" value="188">
+										<span class="checkmark"></span>
+							</label>
+										<h3>2 tablespoons</h3>
+							</td>
+							<td>
+										<h4 style="float:right;">188cal</h4>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+							<label class="container"> Pizza
+										<input type="checkbox" id="food3" value="188">
+										<span class="checkmark"></span>
+							</label>
+										<h3>1.5 slice</h3>
+							</td>
+							<td>
+										<h4>427.5cal</h4>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+							<label class="container"> Barbeque chicken
+										<input type="checkbox" id="food3" value="226">
+										<span class="checkmark"></span>
+							</label>
+										<h3>100g</h3>
+							</td>
+							<td>
+										<h4>226cal</h4>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+							<label class="container"> Bolognese pasta
+										<input type="checkbox" id="food3" value="260">
+										<span class="checkmark"></span>
+							</label>
+										<h3>1 plate</h3>
+							</td>
+							<td>
+										<h4>260cal</h4>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+							<label class="container"> Mac and Cheese
+										<input type="checkbox" id="food3" value="164">
+										<span class="checkmark"></span>
+							</label>
+										<h3>100g</h3>
+							</td>
+							<td>
+										<h4>164cal</h4>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+							<label class="container"> Chicken soup
+										<input type="checkbox" id="food3" value="164">
+										<span class="checkmark"></span>
+							</label>
+										<h3>100g</h3>
+							</td>
+							<td>
+										<h4>36cal</h4>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+							<label class="container"> Vanilla Ice Cream
+										<input type="checkbox" id="food3" value="164">
+										<span class="checkmark"></span>
+							</label>
+										<h3>100g</h3>
+							</td>
+							<td>
+										<h4>207cal</h4>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+
+<!--- END OF FOOD LIST ------->
+
+			<button type="submit">ADD TO DIARY</button>
+
+			<script>
+					$(document).ready(function(){
+							$("#myInput").on("keyup", function() {
+									var value = $(this).val().toLowerCase();
+									$("#mytable tr").filter(function() {
+										$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+									});
+							});
+					});
+			</script>
+
+
+
+  </body>
+
+
+</html>

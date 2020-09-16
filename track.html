@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Workout Tracker</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="my_portfolio_style.css" />
+
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Open+Sans:wght@300;400;600&family=Roboto&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+		<script src="jquery-1.7.1.min.js"> </script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<style>
+
+				body{
+					margin: 0;
+				}
+		/******* START OF BOTTOM NAVBAR STYLING *******/
+				.navbar {
+					width: 100%;
+					background-color: white;
+					overflow: hidden;
+					position:fixed;
+					bottom:0;
+					border-top: 1px solid #B6BBBE;
+					z-index: 1000;
+				}
+
+				#surround {
+					display: inline-block;
+					width: 13%;
+					text-align: center;
+					padding:20px 0 20px;
+				}
+
+				.navbar a {
+					padding: 10px 30px 20px;
+					text-decoration: none;
+					font-size: 30px;
+					font-family: "Open Sans";
+					font-weight: 600;
+					color: #B6BBBE;
+					cursor: pointer;
+				}
+
+				.active{
+					color: #6FCED8;
+				}
+
+				p {
+					margin: 0;
+				}
+		/******* END OF BOTTOM NAVBAR STYLING *******/
+
+
+		/****** START OF HEADING STYLING ******/
+						.heading-container{
+							background-color: #6FCED8;
+							color: white;
+							width: 100%;
+							top: 0;
+							overflow: hidden;
+							border-bottom: 2px solid #B6BBBE;
+							padding: 90px 0 40px;
+							margin: 0;
+							display: block;
+							position: fixed;
+							z-index: 5;
+						}
+
+						h1{
+							font-family: "Montserrat", sans-serif;
+							font-size: 40px;
+							font-weight: 500;
+							text-align: center;
+							margin: 0;
+						}
+
+		/******* END OF HEADING STYLING *******/
+
+		/*********** START OF IMAGE STYLING **********/
+						.workout-img{
+							position: relative;
+							top: 176px;
+							z-index: 0;
+						}
+		/*********** START OF IMAGE STYLING **********/
+
+
+		/******* START OF CATEGORY BUTTON STYLING  *******/
+						#category{
+							position: relative;
+							display: inline-block;
+							top: 270px;
+							left: 60px;
+							font-family: "Montserrat";
+							font-size: 32px;
+						}
+
+
+						.btn-group{
+							left: 150px;
+							width: 700px;
+						}
+
+						.category{
+							width: 210px;
+							height: 110px;
+							border: 2px solid #E1E1E1;
+							font-family: "Montserrat";
+							font-size: 30px;
+							position: relative;
+							left: 115px;
+							margin-left: -3px;
+							margin-right: -3px;
+							background-color: white;
+						}
+
+						.focus{
+							background-color: #6FCED8;
+							color:white;
+							border-color: #6FCED8;
+							outline: 0;
+							font-weight: bold;
+						}
+		/******* START OF CATEGORY BUTTON STYLING  *******/
+
+
+
+		/***** START OF TRACKER BUTTONS STYLING ******/
+						.btn-group{
+							position: relative;
+							top:200px;
+						}
+
+						.container{
+							position: relative;
+							top: 250px;
+							left: 40px;
+							margin: 0;
+							width:100px;
+							height: 100px;
+						}
+
+
+						input[type=number]::-webkit-inner-spin-button {
+							-webkit-appearance: none;
+						}
+
+
+						input,textarea {
+						  border: 2px solid #E1E1E1;
+						  box-sizing: border-box;
+						  margin: 0;
+						  outline: none;
+						  padding: 0;
+						}
+
+						input[type="button"] {
+						  -webkit-appearance: button;
+						  cursor: pointer;
+						}
+
+						input::-webkit-outer-spin-button,
+						input::-webkit-inner-spin-button {
+						  -webkit-appearance: none;
+						}
+
+						.input-group {
+						  clear: both;
+						  margin:0;
+						  position: relative;
+							top: 260px;
+							left: 300px;
+							width: 500px;
+							padding: 0;
+						}
+
+						.input-group input[type='button'] {
+						  background-color: #eeeeee;
+						  min-width: 136px;
+						  width: auto;
+						  transition: all 300ms ease;
+							font-family: "Montserrat";
+							font-weight: 300;
+						}
+
+						.input-group .button-minus,
+						.input-group .button-plus {
+						  font-weight: 300;
+						  height: 136px;
+						  position: absolute;
+							border: 0;
+						}
+
+						.input-group .button-minus {
+							font-size: 65px;
+							padding-bottom: 5px;
+							font-family: "Montserrat";
+
+						}
+
+						.input-group .button-plus {
+							font-size: 50px;
+							left:364px;
+						}
+
+						.input-group .quantity-field {
+						  position: absolute;
+						  height: 136px;
+						  left: 136px;
+						  text-align: center;
+						  width: 230px;
+						  display: inline-block;
+						  font-size: 38px;
+							font-style: "Montserrat";
+							font-weight: lighter;
+						  resize: vertical;
+						}
+
+
+						input[type="number"] {
+						  -moz-appearance: textfield;
+						  -webkit-appearance: none;
+						}
+
+						#weight{
+							position: relative;
+							top: 440px;
+						}
+
+						#reps{
+							position: relative;
+							top: 620px;
+						}
+
+
+						.sets{
+							position: relative;
+							display: inline-block;
+							top: 340px;
+							left: 124px;
+							font-family: "Montserrat";
+							font-size: 32px;
+						}
+
+						.weight{
+							position: relative;
+							display: inline-block;
+							top: 515px;
+							left: 80px;
+							font-family: "Montserrat";
+							font-size: 32px;
+						}
+
+						.reps{
+							position: relative;
+							display: inline-block;
+							top: 705px;
+							left: 115px;
+							font-family: "Montserrat";
+							font-size: 32px;
+						}
+			/***** END OF TRACKER BUTTONS STYLING *******/
+
+			/******** START OF SUBMIT BUTTON STYLING *********/
+							.submit{
+								clear:both;
+								display: block;
+								background-color: #6FCED8;
+								border: 0;
+								color: white;
+								font-family: "Montserrat",sans-serif;
+								font-size: 35px;
+								font-weight: 400;
+								letter-spacing: 5px;
+								padding: 38px 200px 38px;
+								margin: 100px 100px 250px;
+								left: 15px;
+								position: relative;
+								top: 750px;
+								z-index: 0;
+							}
+
+
+
+
+
+
+			/******** START OF SUBMIT BUTTON STYLING *********/
+
+		</style>
+
+	</head>
+
+
+
+	<body>
+<!--- START OF BOTTOM NAVBAR ---->
+      <div class="navbar">
+						<!-- This did not work! text appeared beside the icons, not under.
+								<a href="track.html">
+										<img
+												src="track.svg"
+												alt="graph image"
+												width="70px"
+												color="grey"
+												>
+										Track
+								</a>
+						-->
+				<a href="diary.html">
+						<span id="surround">
+								<img class="diary-icon"
+										src="diary.svg"
+										alt="diary image"
+										width="80px">
+								<p>Diary</p>
+						</span>
+					</a>
+
+
+					<a href="meals.html">
+						<span id="surround">
+								<img class="meal-icon"
+										src="meal.svg"
+										alt="plate image"
+										width="80px">
+								<p>Meals</p>
+						</span>
+					</a>
+
+
+					<a href="workouts(MyProgram).html">
+							<span id="surround">
+									<img class="workout-icon"
+											src="workout.svg"
+											alt="weights image"
+											width="80px">
+									<p>Workouts</p>
+							</span>
+					</a>
+
+
+					<a href="track.html">
+						<span id="surround" class="active">
+									<img class="track-icon"
+											src="active-track.svg"
+											alt="graph image"
+											width="70px">
+											<p>Track</p>
+							</span>
+					</a>
+
+
+						<a href="rewards.html">
+							<span id="surround">
+										<img class="rewards-icon"
+												src="reward.svg"
+												alt="gift image"
+												width="80px">
+										<p>Rewards</p>
+							</span>
+						</a>
+      </div>
+<!--- END OF BOTTOM NAVBAR ---->
+
+
+<!--- START OF HEADING ----->
+			<div class="heading-container">
+					<h1>Workout Tracker</h1>
+			</div>
+<!--- END OF HEADING ------->
+
+			<img src="tracker.png" class="workout-img" alt="workout-image" width="100%">
+
+<!--- START OF CATEGORY BUTTONS -------->
+
+			<div id="category">
+				<p>Category:</p>
+			</div>
+
+			<div class="btn-group btn-group-justified" role="group">
+				<button type="button" class="category">Strength</button>
+				<button type="button" class="category">Endurance</button>
+				<button type="button" class="category">Power</button>
+			</div>
+<!--- END OF CATEGORY BUTTONS -------->
+
+
+<!--- START OF TRACKER BUTTONS -------------->
+			<div class="sets">
+				<p>Sets:</p>
+			</div>
+
+			<div class="input-group" id="sets">
+				<input type="button" value="-" class="button-minus" data-field="quantity">
+  			<input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+  			<input type="button" value="+" class="button-plus" data-field="quantity">
+			</div>
+
+			<div class="weight">
+				<p>Weight:</p>
+			</div>
+
+			<div class="input-group" id="weight">
+				<input type="button" value="-" class="button-minus" data-field="quantity">
+  			<input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+  			<input type="button" value="+" class="button-plus" data-field="quantity">
+			</div>
+
+			<div class="reps">
+				<p>Reps:</p>
+			</div>
+			<div class="input-group" id="reps">
+				<input type="button" value="-" class="button-minus" data-field="quantity">
+  			<input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+  			<input type="button" value="+" class="button-plus" data-field="quantity">
+			</div>
+<!--- END OF TRACKER BUTTONS -------------->
+
+
+<!-- START OF SUBMIT BUTTON --------->
+			<div class="submit-btn">
+					<button type="submit" class="submit">ADD WORKOUT</button>
+			</div>
+
+
+<!-- END OF SUBMIT BUTTON --------->
+
+
+			<script type="text/javascript">
+// START OF CATEGORY BUTTONS SCRIPT //
+						$(document).ready(function() {
+								$("button").on('click', function(){
+										$("button").removeClass('focus');
+										$(this).addClass('focus');
+								});
+						});
+// END OF CATEGORY BUTTONS SCRIPT //
+
+// START OF BUTTONS SCRIPT //
+						function incrementValue(e) {
+							  e.preventDefault();
+							  var fieldName = $(e.target).data('field');
+							  var parent = $(e.target).closest('div');
+							  var currentVal = parseInt(parent.find('input[name=' + fieldName + ']').val(), 10);
+
+							  if (!isNaN(currentVal)) {
+							    parent.find('input[name=' + fieldName + ']').val(currentVal + 1);
+							  }
+								else {
+							    parent.find('input[name=' + fieldName + ']').val(0);
+							  }
+						}
+
+						function decrementValue(e) {
+							  e.preventDefault();
+							  var fieldName = $(e.target).data('field');
+							  var parent = $(e.target).closest('div');
+							  var currentVal = parseInt(parent.find('input[name=' + fieldName + ']').val(), 10);
+
+							  if (!isNaN(currentVal) && currentVal > 0) {
+							    parent.find('input[name=' + fieldName + ']').val(currentVal - 1);
+							  }
+								else {
+							    parent.find('input[name=' + fieldName + ']').val(0);
+							  }
+						}
+
+						$(".input-group").on("click", ".button-plus", function(e) {
+					  		incrementValue(e);
+						});
+
+						$(".input-group").on("click", ".button-minus", function(e) {
+					  		decrementValue(e);
+						});
+
+// END OF BUTTONS//
+			</script>
+
+
+
+
+
+
+  </body>
+
+
+</html>

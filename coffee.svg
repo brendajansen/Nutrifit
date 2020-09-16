@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="58.182" viewBox="0 0 60 58.182">
+  <g id="Group_140" data-name="Group 140" transform="translate(-200 -253)">
+    <g id="Ellipse_23" data-name="Ellipse 23" transform="translate(200 253)" fill="#fff" stroke="#b5b6b7" stroke-width="1" opacity="0.6">
+      <ellipse cx="30" cy="29.091" rx="30" ry="29.091" stroke="none"/>
+      <ellipse cx="30" cy="29.091" rx="29.5" ry="28.591" fill="none"/>
+    </g>
+    <g id="soup" transform="translate(202.969 246.319)">
+      <path id="Path_78" data-name="Path 78" d="M38.14,50.878a4.247,4.247,0,0,0-1.9,1.427,5.367,5.367,0,0,1-1.182,1.08,4,4,0,0,1-1.344.458h-16a.682.682,0,0,0-.682.682,9.184,9.184,0,0,0,5.1,8.1H19.512v1.363H34.168V62.629H31.547a9.184,9.184,0,0,0,5.1-8.1.679.679,0,0,0-.2-.483,9.708,9.708,0,0,0,.807-.826,3.08,3.08,0,0,1,1.291-1.035,1.949,1.949,0,0,1,2.292.907l1.193-.659A3.309,3.309,0,0,0,38.14,50.878ZM26.84,62.4a8.248,8.248,0,0,1-8.414-7.2H35.254A8.248,8.248,0,0,1,26.84,62.4Z" transform="translate(0 -19.345)" fill="#707070"/>
+      <rect id="Rectangle_43" data-name="Rectangle 43" width="9.903" height="1.363" transform="translate(21.888 45.368)" fill="#707070"/>
+      <path id="Path_79" data-name="Path 79" d="M42.508,31.2H43.77c1.514-1.84-1.514-3.679,0-5.52H42.508C40.994,27.521,44.023,29.361,42.508,31.2Z" transform="translate(-19.35)" fill="#707070"/>
+      <path id="Path_80" data-name="Path 80" d="M55.933,31.2H57.2c1.514-1.84-1.514-3.679,0-5.52H55.933C54.419,27.521,57.448,29.361,55.933,31.2Z" transform="translate(-29.725)" fill="#707070"/>
+      <path id="Path_81" data-name="Path 81" d="M69.361,31.2h1.262c1.514-1.84-1.514-3.679,0-5.52H69.361C67.847,27.521,70.876,29.361,69.361,31.2Z" transform="translate(-40.102)" fill="#707070"/>
+    </g>
+  </g>
+</svg>

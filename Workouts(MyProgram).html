@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Workouts-My Program</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="my_portfolio_style.css" />
+
+
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Open+Sans:wght@300;400;600&family=Roboto&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+		<style>
+
+				body{
+					margin: 0;
+				}
+
+		/******* START OF BOTTOM NAVBAR STYLING *******/
+				.navbar {
+					width: 100%;
+					background-color: white;
+					overflow: hidden;
+					position:fixed;
+					bottom:0;
+					border-top: 1px solid #B6BBBE;
+				}
+
+				#surround {
+					display: inline-block;
+					width: 13%;
+					padding:20px 0 20px;
+				}
+
+				.navbar a {
+					padding: 15px 30px 20px;
+					text-decoration: none;
+					font-size: 30px;
+					font-family: "Open Sans",sans-serif;
+					font-weight: 600;
+					color: #B6BBBE;
+					cursor: pointer;
+					text-align: center;
+				}
+
+				.active{
+					color: #6FCED8;
+				}
+
+				p {
+					margin: 0px 0 0;
+					text-align: center;
+				}
+		/******* END OF BOTTOM NAVBAR STYLING *******/
+
+		/******* START OF WORKOUT HEADING NAVBAR STYLES ******/
+				.workout-nav{
+					width: 100%;
+					position:fixed;
+					top: 0;
+					padding:110px 0 0px;
+					background-color: white;
+				}
+
+				h1{
+					font-family: "Montserrat", sans-serif;
+					font-size: 40px;
+					font-weight: 600;
+					text-align: center;
+					color: rgb(92 92 92);
+					margin: 0;
+				}
+
+
+				#h2-left{
+					border-bottom: 3px solid rgb(92 92 92);
+					margin-left: 60px;
+					padding-bottom: 40px;
+					color: rgb(92 92 92);
+					background-color: white;
+				}
+
+				#h2-right{
+					border-bottom: 3px solid #DFE0E0;
+					margin-right: 60px;
+					padding-bottom: 40px;
+					color: #B5B6B7;
+					background-color: white;
+				}
+
+				h2{
+					font-family: "Montserrat", sans-serif;
+					font-size: 33px;
+					display:inline-block;
+					margin: 50px 70px 40px;
+					text-decoration: none;
+					width: 29%;
+					text-align: center;
+					font-weight: 500;
+				}
+
+		/******* END OF WORKOUT HEADING NAVBAR STYLES ******/
+
+
+		/******* START OF WORKOUT STYLES ******/
+			.logo{
+				border-radius: 100px;
+				display: inline-block;
+				margin-top: 80px;
+				margin-bottom: 20px;
+				vertical-align: middle;
+			}
+
+			#exercises{
+				margin: 250px 60px 200px;
+				display: block;
+				overflow: scroll;
+				float: left;
+			}
+
+			h3{
+					font-size: 30.5px;
+					font-family: "Montserrat", sans-serif;
+					font-weight:400;
+					margin:90px 25px 30px;
+					color: rgb(92 92 92);
+					letter-spacing: 3px;
+					display: inline-block;
+					vertical-align: middle;
+			}
+
+			#container{
+				background-color: #6FCED8;
+				display: block;
+				cursor: pointer;
+				margin: 100px 50px 50px;
+				padding: 35px 0 35px;
+				text-align: center;
+			}
+
+			#recommend{
+				text-decoration: none;
+				color: white;
+				font-family: "Montserrat", sans-serif;
+				font-size: 31px;
+				font-weight: 400;
+				letter-spacing:3px;
+			}
+		/******* END OF WORKOUT STYLES ******/
+		</style>
+
+	</head>
+
+
+
+	<body>
+<!--- START OF BOTTOM NAVBAR ---->
+      <div class="navbar">
+						<!-- This did not work! text appeared beside the icons, not under.
+								<a href="track.html">
+										<img
+												src="track.svg"
+												alt="graph image"
+												width="70px"
+												color="grey"
+												>
+										Track
+								</a>
+						-->
+				<a href="diary.html">
+						<span id="surround">
+								<img class="diary-icon"
+										src="diary.svg"
+										alt="diary image"
+										width="80px">
+								<p>Diary</p>
+						</span>
+					</a>
+
+
+					<a href="meals.html">
+						<span id="surround">
+								<img class="meal-icon"
+										src="meal.svg"
+										alt="plate image"
+										width="80px">
+								<p>Meals</p>
+						</span>
+					</a>
+
+
+					<a href="workouts.html">
+							<span id="surround" class="active">
+									<img class="workout-icon"
+											src="active-workout.svg"
+											alt="weights image"
+											width="80px">
+									<p>Workouts</p>
+							</span>
+					</a>
+
+
+					<a href="track.html">
+						<span id="surround">
+									<img class="track-icon"
+											src="track.svg"
+											alt="graph image"
+											width="70px">
+											<p>Track</p>
+							</span>
+					</a>
+
+
+						<a href="rewards.html">
+							<span id="surround">
+										<img class="rewards-icon"
+												src="reward.svg"
+												alt="gift image"
+												width="80px">
+										<p>Rewards</p>
+							</span>
+						</a>
+      </div>
+<!--- END OF BOTTOM NAVBAR ---->
+
+
+
+<!--- START OF WORKOUT NAVBAR --->
+			<div class="workout-nav">
+
+				<h1>Workouts</h1>
+
+						<span id="h2-left">
+								<h2>MY PROGRAM</h2>
+						</span>
+
+				<a href="Workouts(Classics).html">
+						<span id="h2-right">
+								<h2>CLASSICS</h2>
+						</span>
+				</a>
+
+			</div>
+<!--- END OF WORKOUT NAVBAR ----->
+
+
+
+<!--- START OF EXERCISES --->
+			<div id="exercises">
+
+					<img src="icon.png" class="logo" width="90px"/>
+					<span>
+							<h3>My Cardio</h3>
+					</span>
+					<img src="running.png" width="100%">
+
+
+					<img src="icon.png" class="logo" width="90px"/>
+					<span>
+							<h3>My Strength Training</h3>
+					</span>
+					<img src="lifting.png" width="100%">
+
+
+					<img src="icon.png" class="logo" width="90px"/>
+					<span>
+							<h3>My Leg Workouts</h3>
+					</span>
+					<img src="legs.png" width="100%">
+
+
+					<img src="icon.png" class="logo" width="90px"/>
+					<span>
+							<h3>My Core Workouts</h3>
+					</span>
+					<img src="core.png" width="100%">
+
+
+					<img src="icon.png" class="logo" width="90px"/>
+					<span>
+							<h3>My Circuit Workouts</h3>
+					</span>
+					<img src="circuit.png" width="100%">
+
+
+					<div id="container">
+							<a href="https://www.adidas.com" id="recommend">RECOMMEND ADIDAS PRODUCTS</a>
+					</div>
+
+			</div>
+
+<!--- END OF EXERCISES ----->
+
+
+
+  </body>
+
+
+</html>
